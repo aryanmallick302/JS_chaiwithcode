@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <div>
+        <h2>Amazing Image</h2>
+        <ul id="images">
+            <li><img src="https://images.pexels.com/photos/207353/pexels-photo-207353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="background" id="scenery" height="300px"></li>
+            <li><img src="https://images.pexels.com/photos/7709184/pexels-photo-7709184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="call-center" id="call-center" height="500px" width="500px"></li>
+            <li><img src="https://images.pexels.com/photos/2272825/pexels-photo-2272825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="street-nights" id="streets" height="500px"></li>
+            <li><img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg" alt="car" id="cars" height="300px" width="300px"></li>
+        
+        <li><a href="https://www.google.com" style="color: yellow;" id="google">Click me!</a></li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    //PROJECT
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+        
+    })
+
+
+
+
+
+    //NOT a RECOMMENDED WAY as it provide less feature
+    // document.getElementById('streets').onclick = function(){
+    //     alert("this is street light");
+    // }
+    
+    //type, timeStamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+
+    //RECOMMENDED WAY
+    // document.getElementById('streets').addEventListener('click', function(e){
+    //     console.log(e);
+    // })
+
+    //++++++++++++++++++++++++++++++++++++
+    //EVENT PROPAGATION
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("image clicked inside the ul");
+    // }, false);
+
+    // document.getElementById('streets').addEventListener('click', function(e){
+    //     console.log("streets light get clicked");
+    //     e.stopPropagation();
+    // }, false);
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google was clicked");
+    // })
+
+
+
+</script>
+</html>
